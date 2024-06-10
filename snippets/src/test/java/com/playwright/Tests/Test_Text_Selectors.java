@@ -41,9 +41,24 @@ public class Test_Text_Selectors {
 		System.out.println(webElement2.textContent()); // Contact Sales
 
 		// Using CSS
-		Locator webElement3 = page2.locator("div.d-flex.web-menu-btn .btn.btn-ohrm.btn-free-demo").first();
+		Locator webElement3 = page2.locator("div.d-flex.web-menu-btn .btn.btn-ohrm.btn-free-demo");
 		System.out.println(webElement3.textContent()); // Contact Sales
 		webElement3.click();
+		
+		
+		//Using Loop
+		Locator webElement4 = page2.locator("text = Contact Sales");
+		System.out.println("Total Elements :"+webElement4.count()); // Contact Sales
+		
+		for(int i =0;i<webElement4.count();i++)
+		{
+			String eleValue = webElement4.nth(i).textContent();
+			if(eleValue.contains("Contact Sales"))
+			{
+				webElement4.nth(i).click();
+				break;
+			}
+		}
 
 		page1.close();
 		browserContext1.close();
