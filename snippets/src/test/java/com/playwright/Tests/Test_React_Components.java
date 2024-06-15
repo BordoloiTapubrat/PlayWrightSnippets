@@ -6,13 +6,12 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 
-public class Test_nth_element_selector {
+public class Test_React_Components {
 
-	final static String url = "https://selectorshub.com/xpath-practice-page/";
+	final static String url = "https://www.netflix.com/in/";
 	
 	public static void main(String[] args) {
 		
-
 		Playwright playwright = Playwright.create();
 
 		// Launch Options
@@ -28,12 +27,12 @@ public class Test_nth_element_selector {
 
 		page.navigate(url);
 		
-		System.out.println(page.locator("div[data-id='b4836c7'] ul li >> nth=1").textContent());
-		System.out.println(page.locator("div[data-id='b4836c7'] ul li  >> nth=5").textContent());
+		page.locator("_react = input[name='email']").first().fill("hello@gmail.com");
 		
 		page.close();
 		browser.close();
 		playwright.close();
+
 	}
 
 }

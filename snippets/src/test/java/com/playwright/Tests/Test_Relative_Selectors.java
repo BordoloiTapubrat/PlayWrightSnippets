@@ -57,6 +57,10 @@ public class Test_Relative_Selectors {
 		//near with pixels
 		List<String> nearExamplepixel = page.locator("td:near(:text('John.Smith'),120)").allTextContents();
 		nearExamplepixel.forEach(ele -> System.out.println(ele));
+		
+		page.close();
+		browser.close();
+		playwright.close();
 	}
 	
 	
